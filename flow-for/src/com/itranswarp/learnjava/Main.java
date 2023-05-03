@@ -13,10 +13,8 @@ public class Main {
 			int temp = t%2 == 0 ? 1 : -1;
 			pi += (4.0 / i) * temp;
 			t++;
-		}
-		
-		System.out.println(pi);
-		
+		}	
+		System.out.println(pi);	
 	}
 
 }
