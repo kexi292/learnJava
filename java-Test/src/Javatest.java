@@ -1,17 +1,36 @@
-
+import java.util.*;
 public class Javatest {
 	
 	
+	public static void travese(ListNode ans) {
+		if(ans == null) {
+			return;
+		}
+		travese(ans.next);
+		System.out.println(ans.val);
+	}
 	
-	 /**面向对象基础-方法重载
-	  * 关键是参数不同，返回类型一般相同*/
-	 public static void main(String[] args) {
-	        String s = "Test string";
-	        int n1 = s.indexOf('t');
-	        int n2 = s.indexOf("st");
-	        int n3 = s.indexOf("st", 4);
-	        System.out.println(n1);
-	        System.out.println(n2);
-	        System.out.println(n3);
-	    }
+	public static void main(String[] args) {
+		ListNode list = new ListNode(0);
+		ListNode cur = list;
+		for(int i = 1; i< 10;i++) {
+			cur.next = new ListNode(i);
+			cur = cur.next;
+		}
+		travese(list);
+	}
 }
+
+class ListNode{
+	int val;
+	ListNode next;
+	ListNode(int val) {
+		this.val = val;
+		this.next = null;
+	}
+}
+
+
+
+
+
